@@ -1,0 +1,11 @@
+services:
+  test:
+    environment:
+      - ENV=DEVELOPMENT
+      - JAVA_HOME=/lib/jvm/java-11-openjdk-amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: python3 -m pytest
